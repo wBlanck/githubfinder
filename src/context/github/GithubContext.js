@@ -20,7 +20,9 @@ export const GithubProvider = ({ children }) => {
     const params = new URLSearchParams({
       q: text,
     });
-    const response = await fetch(`${GITHUB_URL}/search/users?${params}`);
+    const response = await fetch(
+      `https://api.github.com/search/users?${params}`
+    );
     const { items } = await response.json();
 
     dispatch({
